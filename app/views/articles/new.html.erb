@@ -1,16 +1,37 @@
-<h1> Create new Articles here!</h1>
+<div class="container">
+	<div class="row">
+	  <div class="col s12">
+	    <div class="card-panel orange darken-4">
+	      <span class="white-text">
+	      	<h2>Create new Articles here!</h2>
 
-<%= form_for @article do |f| %>
-	<p>
-		<%= f.label :title %><br/>
-		<%= f.text_field :title %>
-	</p>
-	<p>
-		<%= f.label :description %>
-		<%= f.text_area :description %>
-	</p>
-	<p>
-		<%= f.submit "Create Article" %>
-	</p>
-<%end%>
+					<% if @article.errors.any? %>
+					<h5>The following errors prevented the article from getting generated</h5>
+						<ul>
+							<% @article.errors.full_messages.each do |msg| %>
+							<li><%= msg %></li>
+							<% end %>
+						</ul>
+					<% end %>
+
+					<%= form_for @article do |f| %>
+						<p>
+							<%= f.label :title, class:"white-text" %><br/>
+							<%= f.text_field :title, class:"white-text" %>
+						</p>
+						<p class="white-text">
+							<%= f.label :description, class:"white-text" %>
+							<%= f.text_area :description, class:"white-text" %>
+						</p>
+						<p>
+							<%= button_tag( class:"btn waves-effect green" ) do %>
+							  Create Article <i class="material-icons right">send</i>
+							<% end %>
+						</p>
+					<%end%>
+	      </span>
+	    </div>
+	  </div>
+	</div>
+</div>
 
