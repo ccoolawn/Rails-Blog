@@ -15,11 +15,7 @@
 				<%= render "layouts/header" %>
 				<%= render "layouts/nav" %>
 				<%= render "layouts/intro" %>
-				<% flash.each do |name, msg| %>
-					<ul>
-						<li><%= msg %></li>
-					</ul>
-				<% end %>
+				<%= render "layouts/messages" %>
 
 				<%= yield %>
 

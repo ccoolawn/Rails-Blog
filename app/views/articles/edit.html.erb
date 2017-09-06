@@ -6,37 +6,8 @@
 	      <span class="white-text">
 	      	<h2>Edit existing article</h2>
 
-					<% if @article.errors.any? %>
-					<h5>The following errors prevented the article from getting generated</h5>
-						<ul>
-							<% @article.errors.full_messages.each do |msg| %>
-							<li><%= msg %></li>
-							<% end %>
-						</ul>
-					<% end %>
+					<%= render 'form' %>
 
-					<%= form_for @article do |f| %>
-						<p>
-							<%= f.label :title, class:"white-text" %><br/>
-							<%= f.text_field :title, class:"white-text" %>
-						</p>
-						<p class="white-text">
-							<%= f.label :description, class:"white-text" %>
-							<%= f.text_area :description, class:"white-text" %>
-						</p>
-						<p>
-							<%= button_tag( class:"btn waves-effect green" ) do %>
-							  <%= f.submit "Update Article" %><i class="material-icons right">send</i>
-							<% end %>
-						</p>
-						<br>
-						<p>
-						<%= button_tag( class:"btn waves-effect indigo" ) do %>
-							<%= link_to "Articles Listing", articles_path %>
-							<i class="material-icons right">assignment_return</i>
-						<% end %>
-					</p>
-					<%end%>
 	      </span>
 	    </div>
 	  </div>

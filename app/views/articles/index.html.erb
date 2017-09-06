@@ -29,6 +29,9 @@
 	    <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
 	      <%= link_to "Show", article_path(article) %>
 	    </a>
+	    <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+	      <%= link_to "Delete", article_path(article), method: :delete, data: {confirm: "Are you sure?"} %>
+	    </a>
 	  </div>
 	</div>
 	<% end %>
