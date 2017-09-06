@@ -1,9 +1,10 @@
+
 <div class="container">
 	<div class="row">
 	  <div class="col s12">
 	    <div class="card-panel orange darken-4">
 	      <span class="white-text">
-	      	<h2>Create new Articles here!</h2>
+	      	<h2>Edit existing article</h2>
 
 					<% if @article.errors.any? %>
 					<h5>The following errors prevented the article from getting generated</h5>
@@ -25,17 +26,17 @@
 						</p>
 						<p>
 							<%= button_tag( class:"btn waves-effect green" ) do %>
-							  <%= f.submit "Submit" %><i class="material-icons right">send</i>
+							  <%= f.submit "Update Article" %><i class="material-icons right">send</i>
 							<% end %>
 						</p>
-					<%end%>
-					<br>
-					<p>
+						<br>
+						<p>
 						<%= button_tag( class:"btn waves-effect indigo" ) do %>
 							<%= link_to "Articles Listing", articles_path %>
 							<i class="material-icons right">assignment_return</i>
 						<% end %>
 					</p>
+					<%end%>
 	      </span>
 	    </div>
 	  </div>
